@@ -1,112 +1,40 @@
-/*
- * animaly_detection_util.cpp
- *
- * Author: write your ID and name here
- */
+
 #include <iostream>
-#include <math.h>
-#include <cstdio>
 #include "anomaly_detection_util.h"
 
-float getYValueFromLine(float x, Line line);
+using namespace std;
 
-// returns the variance of X
-float var(float* x, int size){
-
-    // checking the case when the size is 0.
-    if (size == 0) {
-        throw "Division by zero condition";
-    }
-
-    // checking the case when size is not  0;
-    float sum = 0;
-    float powerSum = 0;
-    for (int i=0 ; i < size ; i++) {
-        sum += x[i];
-        powerSum += pow(x[i],2);
-    }
-
-    return ((1 / (float)size) * powerSum) - (pow((1 / (float) size) * sum,2));
+bool wrong(float val, float expected){
+    return val<expected-0.001 || val>expected+0.001;
 }
 
-// returns the covariance of X and Y
-float cov(float* x, float* y, int size) {
-
-    // checking the case when the size is 0.
-    if (size == 0) {
-        throw "Division by zero condition";
-    }
-
-    // checking the case when the size is not 0.
-    float avgX = avg(x,size);
-    float avgY =avg(y,size);
-
-    float cov = 0;
-    for (int i=0 ; i < size ; i++) {
-        cov += (x[i]-avgX) * (y[i] - avgY);
-    }
-    return cov / (float) size;
-}
+// this is a simple test to put you on the right track
+int main(){
 
 
-// returns the Pearson correlation coefficient of X and Y
-float pearson(float* x, float* y, int size) {
+    const int N=10;
+    float x[]={1,2,3,4,5,6,7,8,9,10};
+    float y[]={2.1,4.2,6.1,8.1,10.3,12.2,14.4,16.1,18.2,20.3};
 
-    // checking the case when the size is 0.
-    if (size == 0) {
-        throw "Division by zero condition";
-    }
-    float v = sqrt((double) var(x,size)) * sqrt((double) var(y,size));
-    if (v == 0) {
-        throw "Division by zero condition";
-    }
-    return (cov(x,y,size)) / (v);
-}
+    Point* ps[N];
+    for(int i=0;i<N;i++)
+        ps[i]=new Point(x[i],y[i]);
 
-// performs a linear regression and returns the line equation
-Line linear_reg(Point** points, int size){
+    Line l=linear_reg(ps,N);
+    Point p(4,8);
 
-    float x [size];
-    float y [size];
-    for (int i=0 ; i < size ; i++){
-        x[i] = points[i]->x;
-        y[i] = points[i]->y;
-    }
-    float varA = var(x,size);
-    if (varA == 0) {
-        return Line ()
-    }
-    float a = cov(x,y,size) / varA;
-    float b = avg(y,size) - a * avg(x,size);
-    return Line(a,b);
-}
+    float v[]={var(x,N),cov(x,y,N),pearson(x,y,N),l.a,l.b,l.f(4),dev(p,l)};
+    float e[]={8.25,16.63,0.999,2.015,0.113,8.176,0.176};
 
-// returns the deviation between point p and the line equation of the points
-float dev(Point p,Point** points, int size){
+
+    for(int i=0;i<7;i++)
+        if(wrong(v[i],e[i]))
+            cout<<"error for check "<<i<<" (-14)"<<endl;
+
+
+    for(int i=0;i<N;i++)
+        delete ps[i];
+
+    cout<<"done"<<endl;
     return 0;
 }
-
-// returns the deviation between point p and the line
-float dev(Point p,Line l){
-    return abs(p.y - getYValueFromLine(p.x,l) );
-}
-
-float getYValueFromLine(float x, Line line) {
-    return line.a * x + line.b;
-}
-
-float avg(float *value,int size){
-    // checking the case when the size is 0.
-    if (size == 0) {
-        throw "Division by zero condition";
-    }
-
-    float sumX=0;
-    for (int i=0 ; i < size ; i++) {
-        sumX += value[i];
-    }
-    return sumX / size;
-}
-
-
-
