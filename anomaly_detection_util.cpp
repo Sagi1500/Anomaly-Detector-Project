@@ -82,7 +82,6 @@ float pearson(float* x, float* y, int size) {
     return (cov(x,y,size)) / (v);
 }
 
-// performs a linear regression and returns the line equation
 /**
  *
  * @param points is a pointer to array of points.
@@ -114,12 +113,12 @@ Line linear_reg(Point** points, int size){
  * @return  the deviation between point p and the line equation of the points
  */
 float dev(Point p,Point** points, int size){
-    return 0;
+    Line line = linear_reg(points,size);
+    return dev(p,line);
 }
 
 
 /**
- *
  * @param x is the x value.
  * @param line is the line.
  * @return the y value.
@@ -135,10 +134,8 @@ float getYValueFromLine(float x, Line line) {
  * @return the deviation between point p and the line
  */
 float dev(Point p,Line l){
-    return abs(p.y - getYValueFromLine(p.x,l));
+    return fabs(getYValueFromLine(p.x,l) - p.y);
 }
-
-
 
 /**
  *
