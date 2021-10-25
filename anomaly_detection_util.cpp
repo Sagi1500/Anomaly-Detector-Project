@@ -1,16 +1,21 @@
 /*
- * animaly_detection_util.cpp
+ * anomaly_detection_util.cpp
  *
- * Author: write your ID and name here
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
  */
+
+
 #include <iostream>
 #include <math.h>
 #include <cstdio>
 #include "anomaly_detection_util.h"
 
-float getYValueFromLine(float x, Line line);
 
-// returns the variance of X
+/**
+ * @param x is a pointer to the number.
+ * @param size is the size of x;
+ * @return the variance of x.
+ */
 float var(float* x, int size){
 
     // checking the case when the size is 0.
@@ -21,6 +26,8 @@ float var(float* x, int size){
     // checking the case when size is not  0;
     float sum = 0;
     float powerSum = 0;
+
+    // The loop calculates the regular sum and another sum when each number is in the power of 2.
     for (int i=0 ; i < size ; i++) {
         sum += x[i];
         powerSum += pow(x[i],2);
@@ -29,7 +36,13 @@ float var(float* x, int size){
     return ((1 / (float)size) * powerSum) - (pow((1 / (float) size) * sum,2));
 }
 
-// returns the covariance of X and Y
+
+/**
+ * @param x  is a pointer to the first number.
+ * @param y is a pointer to the second number.
+ * @param size is the valid size for x and y.
+ * @return the variance between the 2 numbers.
+ */
 float cov(float* x, float* y, int size) {
 
     // checking the case when the size is 0.
@@ -42,14 +55,20 @@ float cov(float* x, float* y, int size) {
     float avgY =avg(y,size);
 
     float cov = 0;
+
+    // This loop calculates the cov.
     for (int i=0 ; i < size ; i++) {
         cov += (x[i]-avgX) * (y[i] - avgY);
     }
     return cov / (float) size;
 }
 
-
-// returns the Pearson correlation coefficient of X and Y
+/**
+ * @param x  is a pointer to the first number.
+ * @param y is a pointer to the second number.
+ * @param size is the valid size for x and y.
+ * @return the Pearson correlation coefficient of X and Y.
+ */
 float pearson(float* x, float* y, int size) {
 
     // checking the case when the size is 0.
@@ -64,6 +83,12 @@ float pearson(float* x, float* y, int size) {
 }
 
 // performs a linear regression and returns the line equation
+/**
+ *
+ * @param points is a pointer to array of points.
+ * @param size is the array's size.
+ * @return  The function performs a linear regression and returns the line equation
+ */
 Line linear_reg(Point** points, int size){
 
     float x [size];
@@ -74,28 +99,55 @@ Line linear_reg(Point** points, int size){
     }
     float varA = var(x,size);
     if (varA == 0) {
-        return Line ()
+        return Line ();
     }
     float a = cov(x,y,size) / varA;
     float b = avg(y,size) - a * avg(x,size);
     return Line(a,b);
 }
 
-// returns the deviation between point p and the line equation of the points
+/**
+ *
+ * @param p is a point.
+ * @param points is a pointer to array of points.
+ * @param size is the array's size.
+ * @return  the deviation between point p and the line equation of the points
+ */
 float dev(Point p,Point** points, int size){
     return 0;
 }
 
-// returns the deviation between point p and the line
-float dev(Point p,Line l){
-    return abs(p.y - getYValueFromLine(p.x,l) );
-}
 
+/**
+ *
+ * @param x is the x value.
+ * @param line is the line.
+ * @return the y value.
+ */
 float getYValueFromLine(float x, Line line) {
     return line.a * x + line.b;
 }
 
+/**
+ *
+ * @param p is the point.
+ * @param l is the line.
+ * @return the deviation between point p and the line
+ */
+float dev(Point p,Line l){
+    return abs(p.y - getYValueFromLine(p.x,l));
+}
+
+
+
+/**
+ *
+ * @param value is a pointer to array.
+ * @param size is the array's size.
+ * @return the average.
+ */
 float avg(float *value,int size){
+
     // checking the case when the size is 0.
     if (size == 0) {
         throw "Division by zero condition";
