@@ -4,6 +4,7 @@
  * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
  */
 
+
 #include <cmath>
 #include "anomaly_detection_util.h"
 
@@ -15,7 +16,6 @@
 float getYValueFromLine(float x, Line line) {
     return line.a * x + line.b;
 }
-
 
 /**
  *
