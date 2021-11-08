@@ -4,16 +4,16 @@
 
 using namespace std;
 
-class TimeSeries {
+class TimeSeries{
 
 public:
-    const char *CSVfileName;
 
-    TimeSeries(const char *CSVfileName) {
-        this->CSVfileName = CSVfileName;
-    }
-    virtual *vactor<string> readFile(const char *CSVfileName));
+	TimeSeries(const char* CSVfileName){
+
+	}
+
 };
+
 
 
 #endif /* TIMESERIES_H_ */
