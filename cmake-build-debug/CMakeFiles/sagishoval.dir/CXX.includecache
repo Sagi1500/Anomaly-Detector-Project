@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp
 cmath
 -
 anomaly_detection_util.h
-/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
 
-/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+
+/home/shoval/CLionProjects/sagishoval/mainTrain.cpp
+iostream
+-
+anomaly_detection_util.h
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
 
