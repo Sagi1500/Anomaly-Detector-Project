@@ -5,7 +5,6 @@
  */
 
 
-
 #include <cmath>
 #include "anomaly_detection_util.h"
 
@@ -17,7 +16,6 @@
 float getYValueFromLine(float x, Line line) {
     return line.a * x + line.b;
 }
-
 
 /**
  *
@@ -147,11 +145,3 @@ float dev(Point p, Point **points, int size) {
     Line line = linear_reg(points, size);
     return dev(p, line);
 }
-
-
-
-
-
-
-
-
