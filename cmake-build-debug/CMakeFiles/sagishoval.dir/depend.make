@@ -5,5 +5,5 @@ CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o: \
  ../anomaly_detection_util.cpp \
  ../anomaly_detection_util.h
 CMakeFiles/sagishoval.dir/mainTrain.cpp.o: \
- ../anomaly_detection_util.h \
- ../mainTrain.cpp
+ ../mainTrain.cpp \
+ ../timeseries.h

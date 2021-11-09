@@ -6,17 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp
-cmath
--
-anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
-
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
-
 /home/shoval/CLionProjects/sagishoval/mainTrain.cpp
-iostream
+string
 -
-anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+fstream
+-
+vector
+-
+utility
+-
+stdexcept
+-
+sstream
+-
+timeseries.h
+/home/shoval/CLionProjects/sagishoval/timeseries.h
+
+/home/shoval/CLionProjects/sagishoval/timeseries.h
+string
+-
+fstream
+-
+vector
+-
+utility
+-
+stdexcept
+-
+sstream
+-
 
