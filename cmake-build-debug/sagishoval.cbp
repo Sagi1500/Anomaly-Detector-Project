@@ -88,6 +88,12 @@
 		<Unit filename="/home/shoval/CLionProjects/sagishoval">
 			<Option target="sagishoval"/>
 		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h">
+			<Option target="sagishoval"/>
+		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
@@ -95,6 +101,12 @@
 			<Option target="sagishoval"/>
 		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/mainTrain.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/timeseries.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/timeseries.h">
 			<Option target="sagishoval"/>
 		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/CMakeLists.txt">

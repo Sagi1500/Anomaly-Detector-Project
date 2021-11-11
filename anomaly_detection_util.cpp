@@ -5,6 +5,7 @@
  */
 
 #include <cmath>
+#include <cstdio>
 #include "anomaly_detection_util.h"
 
 /**
@@ -130,6 +131,7 @@ Line linear_reg(Point **points, int size) {
  */
 float dev(Point p, Line l) {
     return fabsf(getYValueFromLine(p.x, l) - p.y);
+
 }
 
 /**

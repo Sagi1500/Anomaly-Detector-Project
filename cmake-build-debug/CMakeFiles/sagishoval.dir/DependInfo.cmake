@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
   "/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
   "/home/shoval/CLionProjects/sagishoval/mainTrain.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/mainTrain.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/timeseries.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/timeseries.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

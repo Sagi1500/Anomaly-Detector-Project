@@ -129,6 +129,30 @@ sagishoval/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/build
 .PHONY : sagishoval/fast
 
+SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
+.PHONY : SimpleAnomalyDetector.o
+
+# target to build an object file
+SimpleAnomalyDetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o
+.PHONY : SimpleAnomalyDetector.cpp.o
+
+SimpleAnomalyDetector.i: SimpleAnomalyDetector.cpp.i
+.PHONY : SimpleAnomalyDetector.i
+
+# target to preprocess a source file
+SimpleAnomalyDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.i
+.PHONY : SimpleAnomalyDetector.cpp.i
+
+SimpleAnomalyDetector.s: SimpleAnomalyDetector.cpp.s
+.PHONY : SimpleAnomalyDetector.s
+
+# target to generate assembly for a file
+SimpleAnomalyDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.s
+.PHONY : SimpleAnomalyDetector.cpp.s
+
 anomaly_detection_util.o: anomaly_detection_util.cpp.o
 .PHONY : anomaly_detection_util.o
 
@@ -177,6 +201,30 @@ mainTrain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.s
 .PHONY : mainTrain.cpp.s
 
+timeseries.o: timeseries.cpp.o
+.PHONY : timeseries.o
+
+# target to build an object file
+timeseries.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/timeseries.cpp.o
+.PHONY : timeseries.cpp.o
+
+timeseries.i: timeseries.cpp.i
+.PHONY : timeseries.i
+
+# target to preprocess a source file
+timeseries.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/timeseries.cpp.i
+.PHONY : timeseries.cpp.i
+
+timeseries.s: timeseries.cpp.s
+.PHONY : timeseries.s
+
+# target to generate assembly for a file
+timeseries.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/timeseries.cpp.s
+.PHONY : timeseries.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sagishoval"
+	@echo "... SimpleAnomalyDetector.o"
+	@echo "... SimpleAnomalyDetector.i"
+	@echo "... SimpleAnomalyDetector.s"
 	@echo "... anomaly_detection_util.o"
 	@echo "... anomaly_detection_util.i"
 	@echo "... anomaly_detection_util.s"
 	@echo "... mainTrain.o"
 	@echo "... mainTrain.i"
 	@echo "... mainTrain.s"
+	@echo "... timeseries.o"
+	@echo "... timeseries.i"
+	@echo "... timeseries.s"
 .PHONY : help
 
 

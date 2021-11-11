@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
   "CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
   "CMakeFiles/sagishoval.dir/mainTrain.cpp.o"
+  "CMakeFiles/sagishoval.dir/timeseries.cpp.o"
   "sagishoval"
   "sagishoval.pdb"
 )
