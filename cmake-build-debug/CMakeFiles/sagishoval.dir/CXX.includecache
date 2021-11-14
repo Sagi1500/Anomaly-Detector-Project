@@ -16,12 +16,6 @@ timeseries.h
 math.h
 /home/shoval/CLionProjects/sagishoval/math.h
 
-/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp
-SimpleAnomalyDetector.h
-/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
-anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
-
 /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 anomaly_detection_util.h
 /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
@@ -35,14 +29,6 @@ string.h
 -
 math.h
 -
-
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp
-cmath
--
-cstdio
--
-anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
 
 /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
 

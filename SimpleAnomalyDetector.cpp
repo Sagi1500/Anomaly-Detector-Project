@@ -5,14 +5,14 @@
  * constructor.
  */
 SimpleAnomalyDetector::SimpleAnomalyDetector() {
-    // TODO Auto-generated destructor stub
+    this->cf;
 }
 
 /**
  * delete.
  */
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
-    // TODO Auto-generated destructor stub
+//delete this->cf;
 }
 
 /**
@@ -40,18 +40,18 @@ float biggestDev(Point **points, int len, Line line) {
  * @param ts is a TimeSeries.
  */
 void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
-    map<string ,vector<float>> mapPointer = ts.get_map();
+    map<string, vector<float>> *pointer = new map<string, vector<float>>;
+    *pointer = ts.get_map();
     //loop that runs on ts's map
-    for (map<string ,vector<float>> ::iterator itr1 = mapPointer.begin(); itr1 != ts.get_map().end(); itr1++) {
+    for (map<string, vector<float>>::const_iterator itr1 = pointer->cbegin(); itr1 != pointer->cend(); itr1++) {
         // maxPearson for saving the max value of itr1 and itr2 pearson values, initialize by 0.
         float maxPearson = 0;
         // c is for saving the title of the max pearson, initialize as empty string.
         string c;
         //loop that runs on ts's map from the next itr1 to the end.
-        for (map<string ,vector<float>> ::iterator itr2 = itr1; ++itr2 != ts.get_map().end();) {
-
+        for (map<string, vector<float>>::const_iterator itr2 = itr1; ++itr2 != pointer->end();) {
             //calculate the pearson between itr1 float values and itr2 float values.
-            float p = pearson(itr1->second.data(), itr2->second.data(), (int) itr1->second.size());
+            float p = pearson((float*)itr1->second.data(), (float*)itr2->second.data(), (int) itr1->second.size());
             //if p is bigger than the maxPearson, set p to be the new maxPearson.
             if (p > maxPearson) {
                 maxPearson = p;
@@ -64,12 +64,12 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             correlatedFeatures correlatedF;
             correlatedF.feature1 = itr1->first;
             correlatedF.feature2 = c;
-
             //initialize array of points that will contain x's values from itr1 and y's values from itr2.
             Point *points[itr1->second.size()];
             //loop that creates all the points based on itr1 and itr2.
+            Point *point;
             for (int i = 0; i < itr1->second.size(); ++i) {
-                Point *point = new Point(itr1->second.at(i), ts.get_map().find(c)->second.at(i));
+                point = new Point(itr1->second.at(i), ts.get_map().find(c)->second.at(i));
                 points[i] = point;
             }
             //set correlatedFeatures's values based on the points.
@@ -77,16 +77,24 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             correlatedF.corrlation = maxPearson;
             correlatedF.threshold = biggestDev(points, (int) itr1->second.size(), correlatedF.lin_reg);
             //add the current correlatedFeature to this correlatedFeature.
-            this->getNormalModel().push_back(correlatedF);
+            this->cf.push_back(correlatedF);
+           //printf("\n\n%d\n\n",this->getNormalModel().capacity());
+            for (int i = 0; i < itr1->second.size(); i++) {
+                delete points[i];
+            }
         }
     }
+    delete pointer;
+//    for (correlatedFeatures c: this->getNormalModel()) {
+//        printf("33: %s", c.feature1.data());
+//        printf("   %s\n", c.feature2.data());
+//    }
 }
 
 
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     vector<correlatedFeatures> preVector = this->getNormalModel();
-    vector<AnomalyReport> *anomalyReportVector = new vector<AnomalyReport>;
-
+    vector<AnomalyReport> anomalyReportVector;// = new vector<AnomalyReport>;
     //loop that runs on ts's raws values.
     for (int rawNumber = 0; rawNumber < ts.get_map().begin()->second.size(); ++rawNumber) {
         //loop that runs on the correlatedFeature of preVector's table.
@@ -98,12 +106,13 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
             Point *p = new Point(floatValue1, floatValue2);
             //calculate the dev between the new given table's point to lin_reg from the pre table.
             float devValue = dev(*p, c.lin_reg);
+            delete p;
             //if there is deviation (anomaly) its report.
             if (devValue > c.threshold) {
-                AnomalyReport *anomalyReport = new AnomalyReport(c.feature1 + "-" + c.feature2, rawNumber + 1);
-                anomalyReportVector->push_back(*anomalyReport);
+                AnomalyReport anomalyReport(c.feature1 + "-" + c.feature2, rawNumber + 1);
+                anomalyReportVector.push_back(anomalyReport);
             }
         }
     }
-    return *anomalyReportVector;
+    return anomalyReportVector;
 }
