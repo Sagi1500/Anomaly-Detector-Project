@@ -1,4 +1,4 @@
-/opt/Clion/clion-2021.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/shoval/CLionProjects/sagishoval
+/home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/sagi/CLionProjects/sagishoval
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/shoval/CLionProjects/sagishoval/cmake-build-debug
+-- Build files have been written to: /home/sagi/CLionProjects/sagishoval/cmake-build-debug

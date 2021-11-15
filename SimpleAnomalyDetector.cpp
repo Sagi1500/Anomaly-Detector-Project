@@ -5,14 +5,14 @@
  * constructor.
  */
 SimpleAnomalyDetector::SimpleAnomalyDetector() {
-    this->cf;
+
 }
 
 /**
  * delete.
  */
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
-//delete this->cf;
+
 }
 
 /**
