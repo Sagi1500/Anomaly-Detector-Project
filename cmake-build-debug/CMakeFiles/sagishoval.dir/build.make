@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/Clion/clion-2021.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/Clion/clion-2021.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shoval/CLionProjects/sagishoval
+CMAKE_SOURCE_DIR = /home/sagi/CLionProjects/sagishoval
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shoval/CLionProjects/sagishoval/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sagi/CLionProjects/sagishoval/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sagishoval.dir/depend.make
@@ -68,55 +68,55 @@ include CMakeFiles/sagishoval.dir/flags.make
 
 CMakeFiles/sagishoval.dir/mainTrain.cpp.o: CMakeFiles/sagishoval.dir/flags.make
 CMakeFiles/sagishoval.dir/mainTrain.cpp.o: ../mainTrain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sagishoval.dir/mainTrain.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/mainTrain.cpp.o -c /home/shoval/CLionProjects/sagishoval/mainTrain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sagishoval.dir/mainTrain.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/mainTrain.cpp.o -c /home/sagi/CLionProjects/sagishoval/mainTrain.cpp
 
 CMakeFiles/sagishoval.dir/mainTrain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sagishoval.dir/mainTrain.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shoval/CLionProjects/sagishoval/mainTrain.cpp > CMakeFiles/sagishoval.dir/mainTrain.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sagi/CLionProjects/sagishoval/mainTrain.cpp > CMakeFiles/sagishoval.dir/mainTrain.cpp.i
 
 CMakeFiles/sagishoval.dir/mainTrain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sagishoval.dir/mainTrain.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shoval/CLionProjects/sagishoval/mainTrain.cpp -o CMakeFiles/sagishoval.dir/mainTrain.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sagi/CLionProjects/sagishoval/mainTrain.cpp -o CMakeFiles/sagishoval.dir/mainTrain.cpp.s
 
 CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o: CMakeFiles/sagishoval.dir/flags.make
 CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o: ../anomaly_detection_util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o -c /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o -c /home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp
 
 CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp > CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp > CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.i
 
 CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp -o CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp -o CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s
 
 CMakeFiles/sagishoval.dir/timeseries.cpp.o: CMakeFiles/sagishoval.dir/flags.make
 CMakeFiles/sagishoval.dir/timeseries.cpp.o: ../timeseries.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sagishoval.dir/timeseries.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/timeseries.cpp.o -c /home/shoval/CLionProjects/sagishoval/timeseries.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sagishoval.dir/timeseries.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/timeseries.cpp.o -c /home/sagi/CLionProjects/sagishoval/timeseries.cpp
 
 CMakeFiles/sagishoval.dir/timeseries.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sagishoval.dir/timeseries.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shoval/CLionProjects/sagishoval/timeseries.cpp > CMakeFiles/sagishoval.dir/timeseries.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sagi/CLionProjects/sagishoval/timeseries.cpp > CMakeFiles/sagishoval.dir/timeseries.cpp.i
 
 CMakeFiles/sagishoval.dir/timeseries.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sagishoval.dir/timeseries.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shoval/CLionProjects/sagishoval/timeseries.cpp -o CMakeFiles/sagishoval.dir/timeseries.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sagi/CLionProjects/sagishoval/timeseries.cpp -o CMakeFiles/sagishoval.dir/timeseries.cpp.s
 
 CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o: CMakeFiles/sagishoval.dir/flags.make
 CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o: ../SimpleAnomalyDetector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o -c /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o -c /home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp
 
 CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp > CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp > CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.i
 
 CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp -o CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp -o CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.s
 
 # Object files for target sagishoval
 sagishoval_OBJECTS = \
@@ -134,7 +134,7 @@ sagishoval: CMakeFiles/sagishoval.dir/timeseries.cpp.o
 sagishoval: CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o
 sagishoval: CMakeFiles/sagishoval.dir/build.make
 sagishoval: CMakeFiles/sagishoval.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sagishoval"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sagishoval"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sagishoval.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -146,6 +146,6 @@ CMakeFiles/sagishoval.dir/clean:
 .PHONY : CMakeFiles/sagishoval.dir/clean
 
 CMakeFiles/sagishoval.dir/depend:
-	cd /home/shoval/CLionProjects/sagishoval/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shoval/CLionProjects/sagishoval /home/shoval/CLionProjects/sagishoval /home/shoval/CLionProjects/sagishoval/cmake-build-debug /home/shoval/CLionProjects/sagishoval/cmake-build-debug /home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sagi/CLionProjects/sagishoval/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sagi/CLionProjects/sagishoval /home/sagi/CLionProjects/sagishoval /home/sagi/CLionProjects/sagishoval/cmake-build-debug /home/sagi/CLionProjects/sagishoval/cmake-build-debug /home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sagishoval.dir/depend
 
