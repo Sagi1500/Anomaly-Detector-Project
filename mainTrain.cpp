@@ -58,7 +58,8 @@ void checkCorrelationTrain(correlatedFeatures c,string f1, string f2, float a, f
 
 }
 
-int main(){
+int main() {
+
     srand (time(NULL));
     float a1=1+rand()%10, b1=-50+rand()%100;
     float a2=1+rand()%20 , b2=-50+rand()%100;
@@ -106,5 +107,6 @@ int main(){
         cout<<"you have "<<falseAlarms<<" false alarms (-"<<min(30,falseAlarms*3)<<")"<<endl;
 
     cout<<"done"<<endl;
+
     return 0;
 }
