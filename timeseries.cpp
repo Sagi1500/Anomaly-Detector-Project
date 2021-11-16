@@ -1,3 +1,8 @@
+/*
+ * timeseries.cpp
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
+ */
+
 #include "timeseries.h"
 
 
@@ -16,7 +21,6 @@ void TimeSeries::print_map() {
  * The function will print the vector.
  * @param input is the vector to print.
  */
-
 void TimeSeries::print_vector(const vector<float> &input) {
     for (int i = 0; i < input.size(); i++) {
         cout << input.at(i) << ' ';
