@@ -16,7 +16,6 @@ SimpleAnomalyDetector::~SimpleAnomalyDetector() {
 }
 
 /**
- *
  * @param points is array of points.
  * @param len is the length of points' array.
  * @param line is the linear_reg we want to compere the points.
