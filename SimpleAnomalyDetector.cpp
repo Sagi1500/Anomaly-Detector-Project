@@ -79,7 +79,6 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             correlatedF.lin_reg = linear_reg(points, (int) itr1->second.size());
             correlatedF.corrlation = maxPearson;
             float space = 1.15;
-            //printf("biggestDev: %f\n", biggestDev(points, itr1->second.size(), correlatedF.lin_reg));
             correlatedF.threshold = biggestDev(points, itr1->second.size(), correlatedF.lin_reg) * space;
             //add the current correlatedFeature to this correlatedFeature.
             this->cf.push_back(correlatedF);
