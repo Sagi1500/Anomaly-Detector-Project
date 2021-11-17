@@ -44,17 +44,17 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
     map<string, vector<float>> *pointer = new map<string, vector<float>>;
     *pointer = ts.get_map();
     //loop that runs on ts's map
-    for (map<string, vector<float >>::const_iterator itr1 = pointer->cbegin(); itr1 != pointer->cend();
+    for (map<string, vector<float >>::iterator itr1 = pointer->begin(); itr1 != pointer->cend();
          itr1++) {
         // maxPearson for saving the max value of itr1 and itr2 pearson values, initialize by 0.
         float maxPearson = 0.9;
         // c is for saving the title of the max pearson, initialize as empty string.
         string c;
         //loop that runs on ts's map from the next itr1 to the end.
-        for (map<string, vector<float >>::const_iterator itr2 = itr1; ++itr2 != pointer->end();) {
+        for (map<string, vector<float >>::iterator itr2 = itr1; ++itr2 != pointer->end();) {
             //calculate the pearson between itr1 float values and itr2 float values.
             float p = fabsf(
-                    pearson((float *) itr1->second.data(), (float *) itr2->second.data(), (int) itr1->second.size()));
+                    pearson(itr1->second.data(), itr2->second.data(), (int) itr1->second.size()));
             //if p is bigger than the maxPearson, set p to be the new maxPearson.
             if (p >= maxPearson) {
                 maxPearson = p;
@@ -78,9 +78,9 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             //set correlatedFeatures's values based on the points.
             correlatedF.lin_reg = linear_reg(points, (int) itr1->second.size());
             correlatedF.corrlation = maxPearson;
-            float space = 1.2;
-            printf("biggestDev: %f\n", biggestDev(points, itr1->second.size(), correlatedF.lin_reg));
-            correlatedF.threshold = space * biggestDev(points, itr1->second.size(), correlatedF.lin_reg);
+            float space = 1.15;
+            //printf("biggestDev: %f\n", biggestDev(points, itr1->second.size(), correlatedF.lin_reg));
+            correlatedF.threshold = biggestDev(points, itr1->second.size(), correlatedF.lin_reg) * space;
             //add the current correlatedFeature to this correlatedFeature.
             this->cf.push_back(correlatedF);
             //delete alloc points
@@ -115,8 +115,6 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
             delete p;
             //if there is deviation (anomaly) its report.
             if (devValue > c.threshold) {
-                printf("f1: %s   f2: %s   raw: %ld\n",c.feature1.data(),c.feature2.data(),rawNumber+1);
-                printf("pre threshold:  %f  \ndevValue:   %f\n", c.threshold,devValue);
                 //raws' number start with 1 and not 0
                 AnomalyReport anomalyReport(c.feature1 + "-" + c.feature2, rawNumber + 1);
                 anomalyReportVector.push_back(anomalyReport);
