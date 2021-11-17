@@ -1,3 +1,7 @@
+/*
+ * anomaly_detection_util.h
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
+ */
 
 #ifndef ANOMALYDETECTORUTIL_H_
 #define ANOMALYDETECTORUTIL_H_

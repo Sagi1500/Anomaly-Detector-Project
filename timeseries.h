@@ -1,4 +1,3 @@
-
 #ifndef TIMESERIES_H_
 #define TIMESERIES_H_
 
@@ -10,6 +9,11 @@
 
 
 using namespace std;
+/*
+ * timeseries.h
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
+ */
+
 
 class TimeSeries {
 private:

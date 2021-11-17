@@ -1,11 +1,9 @@
 /*
  * anomaly_detection_util.cpp
- *
  * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
  */
 
 #include <cmath>
-#include <cstdio>
 #include "anomaly_detection_util.h"
 
 /**

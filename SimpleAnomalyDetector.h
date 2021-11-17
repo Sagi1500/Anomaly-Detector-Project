@@ -1,4 +1,7 @@
-
+/*
+ * SimpleAnomalyDetector.h
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
+ */
 
 #ifndef SIMPLEANOMALYDETECTOR_H_
 #define SIMPLEANOMALYDETECTOR_H_
@@ -17,7 +20,6 @@ struct correlatedFeatures{
 	float threshold;
 };
 
-
 class SimpleAnomalyDetector:public TimeSeriesAnomalyDetector{
 private:
     vector<correlatedFeatures> cf;
@@ -32,7 +34,5 @@ public:
 		return cf;
 	}
 };
-
-
 
 #endif /* SIMPLEANOMALYDETECTOR_H_ */

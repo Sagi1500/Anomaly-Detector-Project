@@ -1,3 +1,8 @@
+/*
+ * SimpleAnomalyDetector.cpp
+ * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
+ */
+
 #include "SimpleAnomalyDetector.h"
 #include "anomaly_detection_util.h"
 
@@ -87,7 +92,11 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
     delete pointer;
 }
 
-
+/**
+ *
+ * @param ts is the TimeSeries.
+ * @return - The function returns a vector that contain all the exceptions value from timeseries.
+ */
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     vector<correlatedFeatures> preVector = this->getNormalModel();
     vector<AnomalyReport> anomalyReportVector;
