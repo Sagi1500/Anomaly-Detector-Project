@@ -129,6 +129,30 @@ sagishoval/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/build
 .PHONY : sagishoval/fast
 
+MainTrain.o: MainTrain.cpp.o
+.PHONY : MainTrain.o
+
+# target to build an object file
+MainTrain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.o
+.PHONY : MainTrain.cpp.o
+
+MainTrain.i: MainTrain.cpp.i
+.PHONY : MainTrain.i
+
+# target to preprocess a source file
+MainTrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.i
+.PHONY : MainTrain.cpp.i
+
+MainTrain.s: MainTrain.cpp.s
+.PHONY : MainTrain.s
+
+# target to generate assembly for a file
+MainTrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.s
+.PHONY : MainTrain.cpp.s
+
 SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
 .PHONY : SimpleAnomalyDetector.o
 
@@ -201,6 +225,30 @@ mainTrain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.s
 .PHONY : mainTrain.cpp.s
 
+minCircle.o: minCircle.cpp.o
+.PHONY : minCircle.o
+
+# target to build an object file
+minCircle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/minCircle.cpp.o
+.PHONY : minCircle.cpp.o
+
+minCircle.i: minCircle.cpp.i
+.PHONY : minCircle.i
+
+# target to preprocess a source file
+minCircle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/minCircle.cpp.i
+.PHONY : minCircle.cpp.i
+
+minCircle.s: minCircle.cpp.s
+.PHONY : minCircle.s
+
+# target to generate assembly for a file
+minCircle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/minCircle.cpp.s
+.PHONY : minCircle.cpp.s
+
 timeseries.o: timeseries.cpp.o
 .PHONY : timeseries.o
 
@@ -234,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sagishoval"
+	@echo "... MainTrain.o"
+	@echo "... MainTrain.i"
+	@echo "... MainTrain.s"
 	@echo "... SimpleAnomalyDetector.o"
 	@echo "... SimpleAnomalyDetector.i"
 	@echo "... SimpleAnomalyDetector.s"
@@ -243,6 +294,9 @@ help:
 	@echo "... mainTrain.o"
 	@echo "... mainTrain.i"
 	@echo "... mainTrain.s"
+	@echo "... minCircle.o"
+	@echo "... minCircle.i"
+	@echo "... minCircle.s"
 	@echo "... timeseries.o"
 	@echo "... timeseries.i"
 	@echo "... timeseries.s"

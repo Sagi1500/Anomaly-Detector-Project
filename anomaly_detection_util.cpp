@@ -3,7 +3,7 @@
  * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
  */
 
-#include <cmath>
+#include <math.h>
 #include "anomaly_detection_util.h"
 
 /**
@@ -129,7 +129,6 @@ Line linear_reg(Point **points, int size) {
  */
 float dev(Point p, Line l) {
     return fabsf(getYValueFromLine(p.x, l) - p.y);
-
 }
 
 /**

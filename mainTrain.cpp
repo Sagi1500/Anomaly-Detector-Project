@@ -99,9 +99,6 @@ int main() {
         bool anomlyDetected = false;
         int falseAlarms = 0;
         for_each(r.begin(), r.end(), [&anomaly, &anomlyDetected, &falseAlarms](AnomalyReport ar) {
-//            printf("des: %s   ", ar.description.data());
-//            printf("anomaly: %d   ", anomaly);
-//            printf("timestep: %d\n", ar.timeStep);
 
             if (ar.description == "A-C" && ar.timeStep == anomaly)
                 anomlyDetected = true;

@@ -1,7 +1,3 @@
-/*
- * anomaly_detection_util.h
- * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
- */
 
 #ifndef ANOMALYDETECTORUTIL_H_
 #define ANOMALYDETECTORUTIL_H_
@@ -22,7 +18,7 @@ float pearson(float* x, float* y, int size);
 class Line{
 public:
     float a,b;
-    Line():a(0),b(0){}
+    Line():a(0),b(0){};
     Line(float a, float b):a(a),b(b){}
     float f(float x){
         return a*x+b;
@@ -42,6 +38,6 @@ Line linear_reg(Point** points, int size);
 float dev(Point p,Point** points, int size);
 
 // returns the deviation between point p and the line
-float dev(Point p, Line l);
+float dev(Point p,Line l);
 
 #endif

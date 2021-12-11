@@ -88,6 +88,9 @@
 		<Unit filename="/home/shoval/CLionProjects/sagishoval">
 			<Option target="sagishoval"/>
 		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/MainTrain.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
@@ -101,6 +104,12 @@
 			<Option target="sagishoval"/>
 		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/mainTrain.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/minCircle.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/minCircle.h">
 			<Option target="sagishoval"/>
 		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/timeseries.cpp">
