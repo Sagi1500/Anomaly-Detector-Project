@@ -153,30 +153,6 @@ HybridAnomalyDetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/HybridAnomalyDetector.cpp.s
 .PHONY : HybridAnomalyDetector.cpp.s
 
-MainTrain.o: MainTrain.cpp.o
-.PHONY : MainTrain.o
-
-# target to build an object file
-MainTrain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.o
-.PHONY : MainTrain.cpp.o
-
-MainTrain.i: MainTrain.cpp.i
-.PHONY : MainTrain.i
-
-# target to preprocess a source file
-MainTrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.i
-.PHONY : MainTrain.cpp.i
-
-MainTrain.s: MainTrain.cpp.s
-.PHONY : MainTrain.s
-
-# target to generate assembly for a file
-MainTrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.s
-.PHONY : MainTrain.cpp.s
-
 SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
 .PHONY : SimpleAnomalyDetector.o
 
@@ -224,6 +200,30 @@ anomaly_detection_util.s: anomaly_detection_util.cpp.s
 anomaly_detection_util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s
 .PHONY : anomaly_detection_util.cpp.s
+
+mainTrain.o: mainTrain.cpp.o
+.PHONY : mainTrain.o
+
+# target to build an object file
+mainTrain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.o
+.PHONY : mainTrain.cpp.o
+
+mainTrain.i: mainTrain.cpp.i
+.PHONY : mainTrain.i
+
+# target to preprocess a source file
+mainTrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.i
+.PHONY : mainTrain.cpp.i
+
+mainTrain.s: mainTrain.cpp.s
+.PHONY : mainTrain.s
+
+# target to generate assembly for a file
+mainTrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.s
+.PHONY : mainTrain.cpp.s
 
 minCircle.o: minCircle.cpp.o
 .PHONY : minCircle.o
@@ -285,15 +285,15 @@ help:
 	@echo "... HybridAnomalyDetector.o"
 	@echo "... HybridAnomalyDetector.i"
 	@echo "... HybridAnomalyDetector.s"
-	@echo "... MainTrain.o"
-	@echo "... MainTrain.i"
-	@echo "... MainTrain.s"
 	@echo "... SimpleAnomalyDetector.o"
 	@echo "... SimpleAnomalyDetector.i"
 	@echo "... SimpleAnomalyDetector.s"
 	@echo "... anomaly_detection_util.o"
 	@echo "... anomaly_detection_util.i"
 	@echo "... anomaly_detection_util.s"
+	@echo "... mainTrain.o"
+	@echo "... mainTrain.i"
+	@echo "... mainTrain.s"
 	@echo "... minCircle.o"
 	@echo "... minCircle.i"
 	@echo "... minCircle.s"

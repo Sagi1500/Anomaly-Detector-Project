@@ -23,7 +23,7 @@ SimpleAnomalyDetector::~SimpleAnomalyDetector() = default;
  * @param line is the linear_reg we want to compere the points.
  * @return the biggest dev value.
  */
-float biggestDev(Point **points, unsigned long len, Line line) {
+float SimpleAnomalyDetector::biggestDev(Point **points, unsigned long len, Line line) {
     float max = -1;
     //loop that runs on the points.
     for (unsigned long i = 0; i < len; i++) {
@@ -122,3 +122,5 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     }
     return anomalyReportVector;
 }
+
+

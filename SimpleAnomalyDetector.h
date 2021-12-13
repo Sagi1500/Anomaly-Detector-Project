@@ -12,11 +12,13 @@
 #include <algorithm>
 #include <string.h>
 #include <math.h>
+#include "minCircle.h"
 
 struct correlatedFeatures{
 	string feature1,feature2;  // names of the correlated features
 	float corrlation;
 	Line lin_reg;
+    Circle circle;
 	float threshold;
 };
 
@@ -29,6 +31,7 @@ public:
 
 	virtual void learnNormal(const TimeSeries& ts);
 	virtual vector<AnomalyReport> detect(const TimeSeries& ts);
+    virtual float biggestDev(Point **points, unsigned long len, Line line);
 
 	vector<correlatedFeatures> getNormalModel(){
 		return cf;
