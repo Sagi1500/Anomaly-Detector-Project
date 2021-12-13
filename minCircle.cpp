@@ -1,10 +1,7 @@
 #include "minCircle.h"
-#include <algorithm>
-#include <assert.h>
-#include <iostream>
 #include <math.h>
 #include <vector>
-
+#include "anomaly_detection_util.h"
 
 /**
  *
@@ -13,7 +10,7 @@
  * @return the distance between the 2 points
  */
 float distance(const Point &p1, const Point &p2) {
-    return sqrtf((p1.x - p2.x) * (p1.x - p2.x) + (p1.x - p2.x) * (p1.x - p2.x));
+    return sqrtf((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
 /**
@@ -96,7 +93,7 @@ Circle min_circle(const Point **points, const size_t size) {
         return create_circle(*points[0], *points[1]);
     }
     for (int i = 0; i < size; i++) {
-        for (int j = 1 + 1; j < 3; j++){
+        for (int j = 1 + 1; j < 3; j++) {
             Circle c = create_circle(*points[i], *points[j]);
             if (is_valid(c, points, size)) {
                 return c;
@@ -113,17 +110,18 @@ Circle min_circle(const Point **points, const size_t size) {
  * @param sizeP is the size op points' array (main).
  * @return the minimum circle that including all the points.
  */
-Circle find_min_circle_with_anther_array(const Point **another_array, size_t sizeA, const Point **points, size_t sizeP) {
-    if(sizeP == 0 || sizeA ==3 ) {
+Circle
+find_min_circle_with_anther_array(const Point **another_array, size_t sizeA, const Point **points, size_t sizeP) {
+    if (sizeP == 0 || sizeA == 3) {
         return min_circle(another_array, sizeA);
     }
-    Circle temp = find_min_circle_with_anther_array(another_array,sizeA,points,sizeP-1);
-    if(is_in_circle(*points[sizeP-1],temp)){
-        return  temp;
+    Circle temp = find_min_circle_with_anther_array(another_array, sizeA, points, sizeP - 1);
+    if (is_in_circle(*points[sizeP - 1], temp)) {
+        return temp;
     }
-    another_array[sizeA]=points[sizeP-1];
+    another_array[sizeA] = points[sizeP - 1];
     sizeA++;
-    return find_min_circle_with_anther_array(another_array,sizeA,points,sizeP-1);
+    return find_min_circle_with_anther_array(another_array, sizeA, points, sizeP - 1);
 
 }
 
@@ -136,5 +134,5 @@ Circle find_min_circle_with_anther_array(const Point **another_array, size_t siz
 Circle findMinCircle(const Point **points, size_t size) {
     const Point *temp[3];
     size_t size_temp = 0;
-    return find_min_circle_with_anther_array(temp, size_temp,points, size);
+    return find_min_circle_with_anther_array(temp, size_temp, points, size);
 }
