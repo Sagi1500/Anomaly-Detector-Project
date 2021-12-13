@@ -109,9 +109,6 @@
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/mainTrain.cpp">
-			<Option target="sagishoval"/>
-		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/minCircle.cpp">
 			<Option target="sagishoval"/>
 		</Unit>

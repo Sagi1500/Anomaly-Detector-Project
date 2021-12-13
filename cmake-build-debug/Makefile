@@ -225,30 +225,6 @@ anomaly_detection_util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s
 .PHONY : anomaly_detection_util.cpp.s
 
-mainTrain.o: mainTrain.cpp.o
-.PHONY : mainTrain.o
-
-# target to build an object file
-mainTrain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.o
-.PHONY : mainTrain.cpp.o
-
-mainTrain.i: mainTrain.cpp.i
-.PHONY : mainTrain.i
-
-# target to preprocess a source file
-mainTrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.i
-.PHONY : mainTrain.cpp.i
-
-mainTrain.s: mainTrain.cpp.s
-.PHONY : mainTrain.s
-
-# target to generate assembly for a file
-mainTrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.s
-.PHONY : mainTrain.cpp.s
-
 minCircle.o: minCircle.cpp.o
 .PHONY : minCircle.o
 
@@ -318,9 +294,6 @@ help:
 	@echo "... anomaly_detection_util.o"
 	@echo "... anomaly_detection_util.i"
 	@echo "... anomaly_detection_util.s"
-	@echo "... mainTrain.o"
-	@echo "... mainTrain.i"
-	@echo "... mainTrain.s"
 	@echo "... minCircle.o"
 	@echo "... minCircle.i"
 	@echo "... minCircle.s"

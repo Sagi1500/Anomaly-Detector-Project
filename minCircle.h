@@ -21,8 +21,8 @@ public:
 };
 // --------------------------------------
 
-Circle findMinCircle(Point** points,size_t size);
-float distance (Point p1, Point p2);
+Circle findMinCircle(const Point **points, size_t size);
+float distance (const Point &p1, const Point &p2);
 
 // you can add here additional methods
 
