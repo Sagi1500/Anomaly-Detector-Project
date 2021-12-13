@@ -9,7 +9,7 @@
  * @param p2 is a second point
  * @return the distance between the 2 points
  */
-float distance(const Point &p1, const Point &p2) {
+float distance(Point &p1, Point &p2) {
     return sqrtf((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
@@ -19,7 +19,7 @@ float distance(const Point &p1, const Point &p2) {
  * @param c is a circle
  * @return true if the point is inside or on the circle and false otherwise.
  */
-bool is_in_circle(const Point &p, const Circle &c) {
+bool is_in_circle(Point &p, Circle &c) {
     return distance(p, c.center) <= c.radius;
 }
 
@@ -29,7 +29,7 @@ bool is_in_circle(const Point &p, const Circle &c) {
  * @param p2  is a point
  * @return the center of a circle.
  */
-Point find_center(const Point &p1, const Point &p2) {
+Point find_center(Point p1, Point p2) {
     float b = (p1.x * p1.x) + (p1.y * p1.y);
     float c = (p2.x * p2.x) + (p2.y * p2.y);
     float d = (p1.x * p2.y) - (p1.y * p2.x);
@@ -43,7 +43,7 @@ Point find_center(const Point &p1, const Point &p2) {
  * @param p3 is a point
  * @return a unique circle created by the 3 points.
  */
-Circle create_circle(const Point &p1, const Point &p2, const Point &p3) {
+Circle create_circle(Point &p1, Point &p2, Point &p3) {
     Point center = find_center(Point(p2.x - p1.x, p2.y - p1.y), Point(p3.x - p1.x, p3.y - p1.y));
     center.x += p1.x;
     center.y += p1.y;
@@ -56,7 +56,7 @@ Circle create_circle(const Point &p1, const Point &p2, const Point &p3) {
  * @param p2 is a point
  * @return a circle that the 2 points are its diameter.
  */
-Circle create_circle(const Point &p1, const Point &p2) {
+Circle create_circle(Point &p1, Point &p2) {
     Point center = Point((p1.x + p2.x) / 2.0, (p1.y + p2.y) / 2.0);
     // the radius is half of the distance between p1 and p2
     return Circle(center, distance(p1, p2) / 2);
@@ -69,7 +69,7 @@ Circle create_circle(const Point &p1, const Point &p2) {
  * @param size is the size of points' array.
  * @return true if all the points are inside or on the circle and false otherwise.
  */
-bool is_valid(const Circle &c, const Point **points, const size_t size) {
+bool is_valid(Circle &c, Point **points, size_t size) {
     for (int i = 0; i < size; i++) {
         if (!is_in_circle(*points[i], c)) {
             return false;
@@ -84,7 +84,7 @@ bool is_valid(const Circle &c, const Point **points, const size_t size) {
  * @param size is the size of points' array.
  * @return the minimum circle for 3 points or 2 points or 1 point.
  */
-Circle min_circle(const Point **points, const size_t size) {
+Circle min_circle(Point **points, size_t size) {
     if (0 == size) {
         return Circle(Point(0, 0), 0);
     } else if (1 == size) {
@@ -111,7 +111,7 @@ Circle min_circle(const Point **points, const size_t size) {
  * @return the minimum circle that including all the points.
  */
 Circle
-find_min_circle_with_anther_array(const Point **another_array, size_t sizeA, const Point **points, size_t sizeP) {
+find_min_circle_with_anther_array(Point **another_array, size_t sizeA, Point **points, size_t sizeP) {
     if (sizeP == 0 || sizeA == 3) {
         return min_circle(another_array, sizeA);
     }
@@ -131,8 +131,8 @@ find_min_circle_with_anther_array(const Point **another_array, size_t sizeA, con
  * @param size is the size of the points' array
  * @return the minimum circle including all the points.
  */
-Circle findMinCircle(const Point **points, size_t size) {
-    const Point *temp[3];
+Circle findMinCircle(Point **points, size_t size) {
+    Point *temp[3];
     size_t size_temp = 0;
     return find_min_circle_with_anther_array(temp, size_temp, points, size);
 }

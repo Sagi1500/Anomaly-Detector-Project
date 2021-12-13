@@ -23,7 +23,9 @@ CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o: \
  ../anomaly_detection_util.cpp \
  ../anomaly_detection_util.h
 CMakeFiles/sagishoval.dir/minCircle.cpp.o: \
- ../minCircle.cpp
+ ../anomaly_detection_util.h \
+ ../minCircle.cpp \
+ ../minCircle.h
 CMakeFiles/sagishoval.dir/timeseries.cpp.o: \
  ../timeseries.cpp \
  ../timeseries.h
