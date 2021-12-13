@@ -88,6 +88,12 @@
 		<Unit filename="/home/shoval/CLionProjects/sagishoval">
 			<Option target="sagishoval"/>
 		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.cpp">
+			<Option target="sagishoval"/>
+		</Unit>
+		<Unit filename="/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h">
+			<Option target="sagishoval"/>
+		</Unit>
 		<Unit filename="/home/shoval/CLionProjects/sagishoval/MainTrain.cpp">
 			<Option target="sagishoval"/>
 		</Unit>

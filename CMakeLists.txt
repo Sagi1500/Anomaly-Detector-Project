@@ -4,7 +4,7 @@ project(sagishoval)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(Header anomaly_detection_util.h, timeseries.h, SimpleAnomalyDetector.h, AnomalyDetector.h minCircle.h)
+set(Header anomaly_detection_util.h, timeseries.h, SimpleAnomalyDetector.h, AnomalyDetector.h minCircle.h HybridAnomalyDetector.h)
 
-add_executable(sagishoval ${PROJECT_SOURCE_DIR} / mainTrain.cpp MainTrain.cpp anomaly_detection_util.cpp
-        timeseries.cpp SimpleAnomalyDetector.cpp minCircle.cpp )
+add_executable(sagishoval ${PROJECT_SOURCE_DIR} / MainTrain.cpp mainTrain.cpp anomaly_detection_util.cpp
+        timeseries.cpp SimpleAnomalyDetector.cpp minCircle.cpp HybridAnomalyDetector.cpp)
