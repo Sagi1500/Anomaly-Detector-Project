@@ -11,8 +11,9 @@ public:
 
 	HybridAnomalyDetector();
 	virtual ~HybridAnomalyDetector();
-    virtual void learnNormal(const TimeSeries &ts) override;
-    virtual vector<AnomalyReport> detect(const TimeSeries& ts) override;
+    virtual void addSpecificValToCF(correlatedFeatures &correlatedF, Point **points, size_t size) override;
+    virtual void setCurrentPearson(float &p, float &maxPearson, float &minPearson, float &currentPearson) override;
+    virtual bool isPointIsValid(const correlatedFeatures &c, Point *p) override;
 };
 
 #endif /* HYBRIDANOMALYDETECTOR_H_ */

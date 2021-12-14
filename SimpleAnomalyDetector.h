@@ -32,7 +32,9 @@ public:
 	virtual void learnNormal(const TimeSeries& ts);
 	virtual vector<AnomalyReport> detect(const TimeSeries& ts);
     virtual float biggestDev(Point **points, unsigned long len, Line line);
-
+    virtual void addSpecificValToCF(correlatedFeatures &correlatedF, Point **points, size_t size);
+    virtual void setCurrentPearson(float &p, float &maxPearson, float &minPearson, float &currentPearson);
+    virtual bool isPointIsValid(const correlatedFeatures &c, Point *p);
 	vector<correlatedFeatures> getNormalModel(){
 		return cf;
 	}

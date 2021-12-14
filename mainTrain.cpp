@@ -228,7 +228,7 @@ int main(){
     HybridAnomalyDetector ad;
     ad.learnNormal(ts);
     vector<correlatedFeatures> cf=ad.getNormalModel();
-
+    printf("size: %zu\n",cf.size());
     if(cf.size()!=3)
         cout<<"wrong size of correlated features (-40)"<<endl;
     else
