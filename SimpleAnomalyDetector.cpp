@@ -40,6 +40,7 @@ float SimpleAnomalyDetector::biggestDev(Point **points, unsigned long len, Line 
  * set SimpleAnomalyDetector by set all the correlated features in the TimeSeries.
  * @param ts is a TimeSeries.
  */
+
 void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
     map<string, vector<float>> *pointer = new map<string, vector<float>>;
     *pointer = ts.get_map();
@@ -67,6 +68,8 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             correlatedFeatures correlatedF;
             correlatedF.feature1 = itr1->first;
             correlatedF.feature2 = c;
+
+
             //initialize array of points that will contain x's values from itr1 and y's values from itr2.
             Point *points[itr1->second.size()];
             //loop that creates all the points based on itr1 and itr2.
@@ -77,8 +80,11 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             }
             //set correlatedFeatures's values based on the points.
             correlatedF.lin_reg = linear_reg(points, (int) itr1->second.size());
+
+
             correlatedF.corrlation = maxPearson;
             float space = 1.15;
+
             correlatedF.threshold = biggestDev(points, itr1->second.size(), correlatedF.lin_reg) * space;
             //add the current correlatedFeature to this correlatedFeature.
             this->cf.push_back(correlatedF);
@@ -122,5 +128,3 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     }
     return anomalyReportVector;
 }
-
-

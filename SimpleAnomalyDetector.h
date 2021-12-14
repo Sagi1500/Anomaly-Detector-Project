@@ -15,18 +15,18 @@
 #include "minCircle.h"
 
 struct correlatedFeatures{
-	string feature1,feature2;  // names of the correlated features
+    string feature1,feature2;  // names of the correlated features
 	float corrlation;
 	Line lin_reg;
-    Circle circle;
+    Circle circle = {{0,0},-1};
 	float threshold;
 };
 
 class SimpleAnomalyDetector:public TimeSeriesAnomalyDetector{
-private:
+protected:
     vector<correlatedFeatures> cf;
 public:
-	SimpleAnomalyDetector();
+    SimpleAnomalyDetector();
 	virtual ~SimpleAnomalyDetector();
 
 	virtual void learnNormal(const TimeSeries& ts);

@@ -7,7 +7,7 @@ HybridAnomalyDetector::HybridAnomalyDetector() {
     // TODO Auto-generated constructor stub
 }
 
-void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
+void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
     map<string, vector<float>> *pointer = new map<string, vector<float>>;
     *pointer = ts.get_map();
     //loop that runs on ts's map
@@ -16,7 +16,7 @@ void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
         // maxPearson for saving the max value of itr1 and itr2 pearson values, initialize by 0.
         float maxPearson = 0.9;
         float minPearson = 0.5;
-        float currentPearson;
+        float currentPearson = 0;
         // c is for saving the title of the max pearson, initialize as empty string.
         string c;
         //loop that runs on ts's map from the next itr1 to the end.
@@ -26,9 +26,11 @@ void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
                     pearson(itr1->second.data(), itr2->second.data(), (int) itr1->second.size()));
             //if p is bigger than the maxPearson, set p to be the new maxPearson.
             if (p >= maxPearson) {
+                maxPearson = p;
                 currentPearson = p;
                 c = itr2->first;
-            } else if (p >= 0.5 && p < 0.9) {
+            } else if (p > currentPearson && p >= minPearson && p < maxPearson) {
+                minPearson = p;
                 currentPearson = p;
                 c = itr2->first;
             }
@@ -39,6 +41,7 @@ void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
             correlatedFeatures correlatedF;
             correlatedF.feature1 = itr1->first;
             correlatedF.feature2 = c;
+            correlatedF.corrlation = currentPearson;
             //initialize array of points that will contain x's values from itr1 and y's values from itr2.
             Point *points[itr1->second.size()];
             //loop that creates all the points based on itr1 and itr2.
@@ -47,18 +50,21 @@ void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
                 point = new Point(itr1->second.at(i), ts.get_map().find(c)->second.at(i));
                 points[i] = point;
             }
-            //if >= 0.9 do:
-
-            //set correlatedFeatures's values based on the points.
-            correlatedF.lin_reg = linear_reg(points, (int) itr1->second.size());
-
-            //else if 0.5<= and >0.9 do:
-            //min_circle
-            correlatedF.corrlation = currentPearson;
-            float space = 1.15;
-            correlatedF.threshold = biggestDev(points, itr1->second.size(), correlatedF.lin_reg) * space;
+            float space = 1.1;
+            //if 0.5<= and >0.9 do:
+            if (currentPearson >= 0.5 && currentPearson < 0.9) {
+                //min_circle
+                correlatedF.circle = findMinCircle(points, itr1->second.size());
+                correlatedF.threshold = correlatedF.circle.radius * space;
+            }
+                //else if >= 0.9 do:
+            else if (currentPearson >= 0.9) {
+                //set correlatedFeatures's values based on the points.
+                correlatedF.lin_reg = linear_reg(points, (int) itr1->second.size());
+                correlatedF.threshold = biggestDev(points, itr1->second.size(), correlatedF.lin_reg) * space;
+            }
             //add the current correlatedFeature to this correlatedFeature.
-            this->getNormalModel().push_back(correlatedF);
+            this->cf.push_back(correlatedF);
             //delete alloc points
             for (int i = 0; i < itr1->second.size(); i++) {
                 delete points[i];
@@ -67,7 +73,7 @@ void HybridAnomalyDetector :: learnNormal(const TimeSeries &ts){
     }
 }
 
-vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
+vector<AnomalyReport> HybridAnomalyDetector::detect(const TimeSeries &ts) {
     vector<correlatedFeatures> preVector = this->getNormalModel();
     vector<AnomalyReport> anomalyReportVector;
     //loop that runs on ts's raws values.
@@ -79,15 +85,25 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
             float floatValue2 = ts.get_map().find(c.feature2)->second.at(rawNumber);
             //create a point: x's value from feature1 and y's value from feature2.
             Point *p = new Point(floatValue1, floatValue2);
-
-            //************* if we need to use lin_reg or minCircle
-
             //calculate the dev between the new given table's point to lin_reg from the pre table.
-            float devValue = dev(*p, c.lin_reg);
+            bool isValid = true;
+            //************* if we need to use lin_reg or minCircle
+            if (c.corrlation >= 0.5 && c.corrlation < 0.9) {
+                float distanceValue = distance(*p, c.circle.center);
+
+                if (distanceValue > c.threshold) {
+                    isValid = false;
+                }
+            } else if (c.corrlation >= 0.9) {
+                float devValue = dev(*p, c.lin_reg);
+                if (devValue > c.threshold) {
+                    isValid = false;
+                }
+            }
             //delete alloc point.
             delete p;
             //if there is deviation (anomaly) its report.
-            if (devValue > c.threshold) {
+            if (!isValid) {
                 //raws' number start with 1 and not 0
                 AnomalyReport anomalyReport(c.feature1 + "-" + c.feature2, rawNumber + 1);
                 anomalyReportVector.push_back(anomalyReport);
@@ -96,5 +112,6 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     }
     return anomalyReportVector;
 }
+
 HybridAnomalyDetector::~HybridAnomalyDetector() = default;
 

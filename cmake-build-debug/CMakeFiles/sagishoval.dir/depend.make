@@ -9,19 +9,24 @@ CMakeFiles/sagishoval.dir/HybridAnomalyDetector.cpp.o: \
  ../anomaly_detection_util.h \
  ../minCircle.h \
  ../timeseries.h
-CMakeFiles/sagishoval.dir/MainTrain.cpp.o: \
- ../MainTrain.cpp \
- ../anomaly_detection_util.h \
- ../minCircle.h
 CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o: \
  ../AnomalyDetector.h \
  ../SimpleAnomalyDetector.cpp \
  ../SimpleAnomalyDetector.h \
  ../anomaly_detection_util.h \
+ ../minCircle.h \
  ../timeseries.h
 CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o: \
  ../anomaly_detection_util.cpp \
  ../anomaly_detection_util.h
+CMakeFiles/sagishoval.dir/mainTrain.cpp.o: \
+ ../AnomalyDetector.h \
+ ../HybridAnomalyDetector.h \
+ ../SimpleAnomalyDetector.h \
+ ../anomaly_detection_util.h \
+ ../mainTrain.cpp \
+ ../minCircle.h \
+ ../timeseries.h
 CMakeFiles/sagishoval.dir/minCircle.cpp.o: \
  ../anomaly_detection_util.h \
  ../minCircle.cpp \

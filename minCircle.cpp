@@ -9,7 +9,7 @@
  * @param p2 is a second point
  * @return the distance between the 2 points
  */
-float distance(Point &p1, Point &p2) {
+float distance(const Point &p1, const Point &p2) {
     return sqrtf((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
@@ -19,7 +19,7 @@ float distance(Point &p1, Point &p2) {
  * @param c is a circle
  * @return true if the point is inside or on the circle and false otherwise.
  */
-bool is_in_circle(Point &p, Circle &c) {
+bool is_in_circle(const Point &p, const Circle &c) {
     return distance(p, c.center) <= c.radius;
 }
 

@@ -23,6 +23,8 @@ public:
 
 Circle findMinCircle(Point **points, size_t size);
 float distance (const Point &p1, const Point &p2);
+bool is_in_circle(const Point &p, const Circle &c);
+
 
 // you can add here additional methods
 
