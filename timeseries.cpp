@@ -7,7 +7,7 @@
 
 
 /**
- * The function will print a map in the from of  map<string,vector<float>>
+ * The function will print a map in the of  map<string,vector<float>>
  */
 void TimeSeries::print_map() {
     for (map<string, vector<float> >::iterator itr = this->m_map.begin(); itr != this->m_map.end(); itr++) {

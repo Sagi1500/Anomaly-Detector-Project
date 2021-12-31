@@ -203,7 +203,7 @@ void checkCorrelation(correlatedFeatures c, string f1, string f2, float a, float
                 if (c.threshold > 111)
                     cout << f1 << "-" << f2 << " wrong value of the radius (-18)" << endl;
             }
-        }
+        }TimeSeriesAnomalyDetector
     }
 
 }

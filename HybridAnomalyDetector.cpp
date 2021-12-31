@@ -10,6 +10,7 @@ HybridAnomalyDetector::HybridAnomalyDetector() = default;
 //: SimpleAnomalyDetector() {
 //    this->cf = SimpleAnomalyDetector::getNormalModel();
 //}
+
 /**
  * delete.
  */
@@ -23,13 +24,13 @@ HybridAnomalyDetector::~HybridAnomalyDetector() = default;
  */
 void HybridAnomalyDetector::addSpecificValToCF(correlatedFeatures &correlatedF, Point **points, size_t size) {
     float space = 1.1;
-    //if 0.5<= and >0.9 do:
-    if (correlatedF.corrlation >= 0.5 && correlatedF.corrlation < 0.9) {
+    //if 0.5<= and > threshold do:
+    if (correlatedF.corrlation >= 0.5 && correlatedF.corrlation < threshold) {
         //min_circle
         correlatedF.circle = findMinCircle(points, size);
         correlatedF.threshold = correlatedF.circle.radius * space;
     }
-        //else if >= 0.9 do:
+        //else if >= threshold do:
     else {
         SimpleAnomalyDetector::addSpecificValToCF(correlatedF, points, size);
     }
@@ -61,8 +62,7 @@ void HybridAnomalyDetector::setCurrentPearson(float &p, float &maxPearson, float
  */
 bool HybridAnomalyDetector::isPointIsValid(const correlatedFeatures &c, Point *p) {
     bool isValid = true;
-    //************* if we need to use lin_reg or minCircle
-    if (c.corrlation >= 0.5 && c.corrlation < 0.9) {
+    if (c.corrlation >= 0.5 && c.corrlation < threshold) {
         float distanceValue = distance(*p, c.circle.center);
         if (distanceValue > c.threshold) {
             isValid = false;

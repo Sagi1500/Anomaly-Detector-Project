@@ -8,7 +8,9 @@
 /**
  * constructor.
  */
-SimpleAnomalyDetector::SimpleAnomalyDetector() = default;
+SimpleAnomalyDetector::SimpleAnomalyDetector(){
+    threshold = 0.9;
+}
 
 /**
  * delete.
@@ -90,7 +92,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
     for (map<string, vector<float >>::iterator itr1 = pointer->begin(); itr1 != pointer->cend();
          itr1++) {
         // maxPearson for saving the max value of itr1 and itr2 pearson values, initialize by 0.
-        float maxPearson = 0.9;
+        float maxPearson = threshold;
         float minPearson = 0.5;
         float currentPearson = 0;
         // c is for saving the title of the max pearson, initialize as empty string.
