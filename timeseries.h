@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <iostream>
+#include <string>
 
 
 using namespace std;
@@ -18,7 +19,7 @@ using namespace std;
 class TimeSeries {
 private:
     // member for TimeSeries
-    map<string, vector<float>> m_map;
+    map<string, vector<float> > m_map;
 public:
 
     /**
@@ -59,7 +60,7 @@ public:
             int array_size = arr->length();
             for (int i = 0; i < array_size; i++) {
                 vector<float> v;
-                m_map.insert(pair<string, vector<float>>(arr[i], v));
+                m_map.insert(pair<string, vector<float> >(arr[i], v));
             }
 
             /*
@@ -88,12 +89,12 @@ public:
      * Getter for the map.
      * @return the map.
      */
-    map<string, vector<float>> get_map() const {
+    map<string, vector<float> > get_map() const {
         return this->m_map;
     }
 
     /**
-     * The function will print a map in the from of  map<string,vector<float>>
+     * The function will print a map in the from of  map<string,vector<float> >
      */
     void print_map();
 
@@ -102,8 +103,6 @@ public:
      * @param input is the vector to print.
      */
     static void print_vector(vector<float> const &input);
-
-
 };
 
 #endif /* TIMESERIES_H_ */

@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion/CLion-2021.2.3/clion-2021.2.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion/CLion-2021.2.3/clion-2021.2.3/bin/cmake/linux/bin/cmake -E rm -f
+RM = /home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shoval/CLionProjects/sagishoval
+CMAKE_SOURCE_DIR = /home/sagi/CLionProjects/sagishoval
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shoval/CLionProjects/sagishoval/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sagi/CLionProjects/sagishoval/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/shoval/CLionProjects/sagishoval/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion/CLion-2021.2.3/clion-2021.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion/CLion-2021.2.3/clion-2021.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/sagi/clion-2021.2.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles /home/shoval/CLionProjects/sagishoval/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles /home/sagi/CLionProjects/sagishoval/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,30 @@ sagishoval/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/build
 .PHONY : sagishoval/fast
 
+CLI.o: CLI.cpp.o
+.PHONY : CLI.o
+
+# target to build an object file
+CLI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/CLI.cpp.o
+.PHONY : CLI.cpp.o
+
+CLI.i: CLI.cpp.i
+.PHONY : CLI.i
+
+# target to preprocess a source file
+CLI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/CLI.cpp.i
+.PHONY : CLI.cpp.i
+
+CLI.s: CLI.cpp.s
+.PHONY : CLI.s
+
+# target to generate assembly for a file
+CLI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/CLI.cpp.s
+.PHONY : CLI.cpp.s
+
 HybridAnomalyDetector.o: HybridAnomalyDetector.cpp.o
 .PHONY : HybridAnomalyDetector.o
 
@@ -152,6 +176,30 @@ HybridAnomalyDetector.s: HybridAnomalyDetector.cpp.s
 HybridAnomalyDetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/HybridAnomalyDetector.cpp.s
 .PHONY : HybridAnomalyDetector.cpp.s
+
+MainTrain.o: MainTrain.cpp.o
+.PHONY : MainTrain.o
+
+# target to build an object file
+MainTrain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.o
+.PHONY : MainTrain.cpp.o
+
+MainTrain.i: MainTrain.cpp.i
+.PHONY : MainTrain.i
+
+# target to preprocess a source file
+MainTrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.i
+.PHONY : MainTrain.cpp.i
+
+MainTrain.s: MainTrain.cpp.s
+.PHONY : MainTrain.s
+
+# target to generate assembly for a file
+MainTrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/MainTrain.cpp.s
+.PHONY : MainTrain.cpp.s
 
 SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
 .PHONY : SimpleAnomalyDetector.o
@@ -200,30 +248,6 @@ anomaly_detection_util.s: anomaly_detection_util.cpp.s
 anomaly_detection_util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.s
 .PHONY : anomaly_detection_util.cpp.s
-
-mainTrain.o: mainTrain.cpp.o
-.PHONY : mainTrain.o
-
-# target to build an object file
-mainTrain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.o
-.PHONY : mainTrain.cpp.o
-
-mainTrain.i: mainTrain.cpp.i
-.PHONY : mainTrain.i
-
-# target to preprocess a source file
-mainTrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.i
-.PHONY : mainTrain.cpp.i
-
-mainTrain.s: mainTrain.cpp.s
-.PHONY : mainTrain.s
-
-# target to generate assembly for a file
-mainTrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sagishoval.dir/build.make CMakeFiles/sagishoval.dir/mainTrain.cpp.s
-.PHONY : mainTrain.cpp.s
 
 minCircle.o: minCircle.cpp.o
 .PHONY : minCircle.o
@@ -282,18 +306,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sagishoval"
+	@echo "... CLI.o"
+	@echo "... CLI.i"
+	@echo "... CLI.s"
 	@echo "... HybridAnomalyDetector.o"
 	@echo "... HybridAnomalyDetector.i"
 	@echo "... HybridAnomalyDetector.s"
+	@echo "... MainTrain.o"
+	@echo "... MainTrain.i"
+	@echo "... MainTrain.s"
 	@echo "... SimpleAnomalyDetector.o"
 	@echo "... SimpleAnomalyDetector.i"
 	@echo "... SimpleAnomalyDetector.s"
 	@echo "... anomaly_detection_util.o"
 	@echo "... anomaly_detection_util.i"
 	@echo "... anomaly_detection_util.s"
-	@echo "... mainTrain.o"
-	@echo "... mainTrain.i"
-	@echo "... mainTrain.s"
 	@echo "... minCircle.o"
 	@echo "... minCircle.i"
 	@echo "... minCircle.s"

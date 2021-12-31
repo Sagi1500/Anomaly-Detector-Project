@@ -62,7 +62,7 @@ void SimpleAnomalyDetector::setCurrentPearson(float &p, float &maxPearson, float
     }
 }
 
-/**
+/** 
  *
  * @param c is a correlatedFeatures.
  * @param p is a pointer to point.
