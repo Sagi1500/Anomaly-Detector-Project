@@ -302,10 +302,10 @@ public:
 
         dio->write("Please upload your local anomalies file.\n");
         while ((s = dio->read()) != "done") {
-            size_t t = 0;
-            for (; s[t] != ','; t++);
-            start = s.substr(0, t);
-            end = s.substr(t + 1, s.length());
+            size_t i = 0;
+            for (; s[i] != ','; i++);
+            start = s.substr(0, i);
+            end = s.substr(i + 1, s.length());
 
             // converting from string to int.
             first = stoi(start);
