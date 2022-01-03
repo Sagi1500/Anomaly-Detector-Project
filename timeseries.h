@@ -10,24 +10,26 @@
 
 
 using namespace std;
+
 /*
  * timeseries.h
  * Author: Shoval Argov 206626681 and Sagi Wiletnzik 208827527
  */
 
-
 class TimeSeries {
 private:
     // member for TimeSeries
     map<string, vector<float> > m_map;
+    size_t number_of_rows;
 public:
 
     /**
      * Constructor
      * @param CSVfileName is the file name.
      */
-     TimeSeries(const char *CSVfileName) {
+    TimeSeries(const char *CSVfileName) {
         m_map = {};
+        number_of_rows = 0;
 
         // Create an input filestream
         ifstream my_file(CSVfileName);
@@ -75,7 +77,11 @@ public:
                     m_map[arr[i]].push_back(stof(key));
                     i++;
                 }
+                // add 1 to the number of rows.
+                number_of_rows++;
             }
+
+
             //clear the string streams.
             temp.clear();
             s.clear();
@@ -103,6 +109,10 @@ public:
      * @param input is the vector to print.
      */
     static void print_vector(vector<float> const &input);
+
+    size_t get_row_number() {
+        return number_of_rows;
+    }
 };
 
 #endif /* TIMESERIES_H_ */

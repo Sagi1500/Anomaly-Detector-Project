@@ -76,11 +76,11 @@ void check(string outputFile,string expectedOutputFile){
 
  //small test
 int main(){
-	STDtest std("input.txt","output.txt");
+	STDtest std("/home/sagi/CLionProjects/sagishoval/input.txt","/home/sagi/CLionProjects/sagishoval/output.txt");
 	CLI cli(&std);
 	cli.start();
 	std.close();
-	check("output.txt","expectedOutput.txt");
+	check("/home/sagi/CLionProjects/sagishoval/output.txt","/home/sagi/CLionProjects/sagishoval/expectedOutput.txt");
 	cout<<"done"<<endl;
 	return 0;
 }

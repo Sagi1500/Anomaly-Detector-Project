@@ -27,7 +27,7 @@ void CLI::start(){
         this->dio->write("Welcome to the Anomaly Detection Server.\n");
         this->dio->write("Please choose an option:\n");
         for (int i = 1; i <= size ; i++ ) {
-            this->dio->write(to_string(i));
+            this->dio->write(to_string(i)+".");
             this->dio->write(commands[i-1]->description + "\n");
         }
         string input = dio->read();
