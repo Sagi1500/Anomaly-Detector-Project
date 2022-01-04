@@ -26,14 +26,6 @@ string.h
 commands.h
 /home/sagi/CLionProjects/sagishoval/commands.h
 
-/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.cpp
-HybridAnomalyDetector.h
-/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.h
-SimpleAnomalyDetector.h
-/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
-anomaly_detection_util.h
-/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
-
 /home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.h
 SimpleAnomalyDetector.h
 /home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
@@ -49,12 +41,6 @@ commands.h
 /home/sagi/CLionProjects/sagishoval/commands.h
 CLI.h
 /home/sagi/CLionProjects/sagishoval/CLI.h
-
-/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp
-SimpleAnomalyDetector.h
-/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
-anomaly_detection_util.h
-/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
 
 /home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 anomaly_detection_util.h
@@ -97,10 +83,6 @@ time.h
 -
 anomaly_detection_util.h
 /home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
-
-/home/sagi/CLionProjects/sagishoval/timeseries.cpp
-timeseries.h
-/home/sagi/CLionProjects/sagishoval/timeseries.h
 
 /home/sagi/CLionProjects/sagishoval/timeseries.h
 map

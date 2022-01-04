@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 
-
 using namespace std;
 
 /*
@@ -81,11 +80,9 @@ public:
                 number_of_rows++;
             }
 
-
             //clear the string streams.
             temp.clear();
             s.clear();
-
         }
         // close the stream.
         my_file.close();

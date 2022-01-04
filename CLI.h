@@ -1,5 +1,4 @@
 
-
 #ifndef CLI_H_
 #define CLI_H_
 
@@ -14,11 +13,12 @@ class CLI {
     // vector for saving all the commands in the CLI.
     vector<Command*> commands;
 
-
 public:
 	CLI(DefaultIO* dio);
 	void start();
 	virtual ~CLI();
+
+    void print_menu(int size);
 };
 
 #endif /* CLI_H_ */

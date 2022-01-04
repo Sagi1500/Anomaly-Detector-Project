@@ -24,26 +24,23 @@ public:
     virtual ~DefaultIO() {}
 
     /**
-     * The function will receive a file name and read it to a file.
+     * The function will receive a file name and read it.
      * @param file_name is the new file name.
      */
     void read_file(string file_name) {
         // creating a new string and new out stream to a file.
-        string s = "";
+        string data = "";
         ofstream out(file_name);
 
         // read from the file until row that contain done. done is the last word in the file.
-        while ((s = read()) != "done") {
-            out << s << endl;
+        while ((data = read()) != "done") {
+            out << data << endl;
         }
 
         // close the out stream.
         out.close();
     }
 };
-
-
-// you may add here helper classes
 
 /**
  * This struct will contain the information of each group of rows in the output.
@@ -56,6 +53,16 @@ struct AnomalyGroup {
     int last;
     string description;
     bool is_false_positive;
+
+    /**
+     * Constructor.
+     */
+    AnomalyGroup() {
+        first = 0;
+        last = 0;
+        description = "";
+        is_false_positive = false;
+    }
 };
 
 /**
@@ -74,11 +81,11 @@ struct CurrentState {
         threshold = 0.9;
         rows_in_test = 0;
     }
-
 };
 
-
-// you may edit this class
+/**
+ * Command class.
+ */
 class Command {
 protected:
     DefaultIO *dio;
@@ -91,8 +98,6 @@ public:
 
     virtual ~Command() {}
 };
-
-// implement here your command classes
 
 /**
  * UploadCommand Class
@@ -144,12 +149,12 @@ public:
 
         // This loop will ask the client to choose new threshold and run until he chooses one that is between 0 and 1.
         while (!is_legal_input) {
-            float f;
+            float input;
             dio->write("Please enter new threshold value\n");
-            dio->read(&f);
+            dio->read(&input);
             // checking if the input is legal.
-            if (f <= 1 && f > 0) {
-                current_state->threshold = f;
+            if (input <= 1 && input > 0) {
+                current_state->threshold = input;
                 is_legal_input = true;
             } else {
                 dio->write("please choose a value between 0 and 1.\n");
@@ -170,32 +175,14 @@ public:
     AnomalyDetectionCommand(DefaultIO *dio) : Command(dio, "detect anomalies") {}
 
     /**
-     * The function will execute the AnomalyDetectionCommand command
-     * @param current_state is the current state for the current input.
+     * The function will analyze the anomaly report vector and create the groups.
+     * Rows will be at the same group if the description is the same and the time steps are following.
+     * At the end each group will be an element in the vector.
+     * @param current_state is the current state.
      */
-    void execute(CurrentState *current_state) override {
-        // creating time series for the csv files.
-        TimeSeries train("anomaly train.csv");
-        TimeSeries test("anomaly test.csv");
-        HybridAnomalyDetector had;
-        vector<correlatedFeatures> cf_vector = had.getNormalModel();
-        current_state->rows_in_test = test.get_row_number();
-
-        // setting the threshold to the current value.
-        had.setThreshold(current_state->threshold);
-
-        // learn the train csv file.
-        had.learnNormal(train);
-
-        // detect the anomaly in the test file.
-        current_state->reports = had.detect(test);
-
+    void analyze_results(CurrentState *current_state) {
         // create a new group and initialize his members.
         AnomalyGroup group;
-        group.first = 0;
-        group.last = 0;
-        group.description = "";
-        group.is_false_positive = false;
 
         // The loop will go over all the report and create the groups.
         for (std::vector<AnomalyReport>::iterator report = current_state->reports.begin();
@@ -213,8 +200,37 @@ public:
                 group.description = report->description;
             }
         }
+        // push the group to the vector.
         current_state->anomaly_group.push_back(group);
         current_state->anomaly_group.erase(current_state->anomaly_group.begin());
+    }
+
+    /**
+     * The function will execute the AnomalyDetectionCommand command
+     * @param current_state is the current state for the current input.
+     */
+    void execute(CurrentState *current_state) override {
+        // creating time series for the csv files.
+        TimeSeries train("anomaly train.csv");
+        TimeSeries test("anomaly test.csv");
+
+        // create the Hybrid anomaly and save the number of rows in the test file.
+        HybridAnomalyDetector had;
+        vector<correlatedFeatures> cf_vector = had.getNormalModel();
+        current_state->rows_in_test = test.get_row_number();
+
+        // setting the threshold to the current value.
+        had.setThreshold(current_state->threshold);
+
+        // learn the train csv file.
+        had.learnNormal(train);
+
+        // detect the anomaly in the test file.
+        current_state->reports = had.detect(test);
+
+        // analyze the results.
+        analyze_results(current_state);
+
         dio->write("anomaly detection complete.\n");
     }
 };
@@ -254,7 +270,6 @@ public:
      */
     UploadAndAnalyzeCommand(DefaultIO *dio) : Command(dio, "upload anomalies and analyze results") {}
 
-
     /**
      * The function will decide if the group from the starting index to the end index is ture positive.
      * @param currentState is the current state.
@@ -262,10 +277,10 @@ public:
      * @param end is the end index.
      * @return true if find true positive (TP), 0 otherwise.
      */
-    bool findTp(CurrentState *currentState, int start, int end) {
+    bool find_true_positive(CurrentState *currentState, int start, int end) {
         for (int i = 0; i < currentState->anomaly_group.size(); i++) {
             AnomalyGroup group = currentState->anomaly_group[i];
-            if (isTP(start, end, group.first, group.last)) {
+            if (is_true_positive(start, end, group.first, group.last)) {
                 currentState->anomaly_group[i].is_false_positive = true;
                 return true;
             }
@@ -280,8 +295,18 @@ public:
      * @param num2_end is the end for the second.
      * @return 1 if true positive, 0 otherwise.
      */
-    bool isTP(int num1_start, int num1_end, int num2_start, int num2_end) {
+    bool is_true_positive(int num1_start, int num1_end, int num2_start, int num2_end) {
         return (num1_end >= num2_start && num2_end >= num1_start);
+    }
+
+    /**
+     * initialize all the anomaly to false positive
+     * @param current_state is the current state.
+     */
+    void initialize_to_false_positive(CurrentState *current_state) {
+        for (size_t i = 0; i < current_state->anomaly_group.size(); i++) {
+            current_state->anomaly_group[i].is_false_positive = false;
+        }
     }
 
     /**
@@ -289,23 +314,19 @@ public:
     * @param current_state is the current state for the current input.
     */
     void execute(CurrentState *current_state) override {
-
-        // initialize all the anomaly to false positive
-        for (size_t i = 0; i < current_state->anomaly_group.size(); i++) {
-            current_state->anomaly_group[i].is_false_positive = false;
-        }
-
-        string start, end, s = "";
+        string start, end, line;
         int sum = 0, positive = 0;
-        int first = 0, last = 0;
+        int first, last;
         float true_positive = 0, false_positive = 0;
 
+        initialize_to_false_positive(current_state);
+
         dio->write("Please upload your local anomalies file.\n");
-        while ((s = dio->read()) != "done") {
+        while ((line = dio->read()) != "done") {
             size_t i = 0;
-            for (; s[i] != ','; i++);
-            start = s.substr(0, i);
-            end = s.substr(i + 1, s.length());
+            for (; line[i] != ','; i++);
+            start = line.substr(0, i);
+            end = line.substr(i + 1, line.length());
 
             // converting from string to int.
             first = stoi(start);
@@ -316,7 +337,7 @@ public:
             positive++;
 
             // checking for true positive.
-            if (findTp(current_state, first, last))
+            if (find_true_positive(current_state, first, last))
                 true_positive++;
         }
         dio->write("Upload complete.\n");
@@ -330,11 +351,12 @@ public:
 
         // calculate and print output.
         float N = current_state->rows_in_test - sum;
-        false_positive = ((int) (1000.0 * false_positive / N)) / 1000.0f;
-        true_positive = ((int) (1000.0 * true_positive / positive)) / 1000.0f;
+        false_positive = ((int) (1000.0 * false_positive / N)) / 1000.0;
+        true_positive = ((int) (1000.0 * true_positive / positive)) / 1000.0;
         dio->write("True Positive Rate: ");
         dio->write(true_positive);
-        dio->write("\nFalse Positive Rate: ");
+        dio->write("\n");
+        dio->write("False Positive Rate: ");
         dio->write(false_positive);
         dio->write("\n");
     }
@@ -359,8 +381,6 @@ public:
     void execute(CurrentState *current_state) override {
         // must implement the execute function.
     }
-
 };
-
 
 #endif /* COMMANDS_H_ */
