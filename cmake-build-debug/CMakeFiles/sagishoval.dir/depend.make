@@ -24,6 +24,18 @@ CMakeFiles/sagishoval.dir/MainTrain.cpp.o: \
  ../CLI.h \
  ../HybridAnomalyDetector.h \
  ../MainTrain.cpp \
+ ../Server.h \
+ ../SimpleAnomalyDetector.h \
+ ../anomaly_detection_util.h \
+ ../commands.h \
+ ../minCircle.h \
+ ../timeseries.h
+CMakeFiles/sagishoval.dir/Server.cpp.o: \
+ ../AnomalyDetector.h \
+ ../CLI.h \
+ ../HybridAnomalyDetector.h \
+ ../Server.cpp \
+ ../Server.h \
  ../SimpleAnomalyDetector.h \
  ../anomaly_detection_util.h \
  ../commands.h \

@@ -8,13 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sagi/CLionProjects/sagishoval/CLI.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/CLI.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/HybridAnomalyDetector.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/MainTrain.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/MainTrain.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/minCircle.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/minCircle.cpp.o"
-  "/home/sagi/CLionProjects/sagishoval/timeseries.cpp" "/home/sagi/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/timeseries.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/CLI.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/CLI.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/HybridAnomalyDetector.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/MainTrain.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/MainTrain.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/Server.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/Server.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/SimpleAnomalyDetector.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/anomaly_detection_util.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/minCircle.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/minCircle.cpp.o"
+  "/home/shoval/CLionProjects/sagishoval/timeseries.cpp" "/home/shoval/CLionProjects/sagishoval/cmake-build-debug/CMakeFiles/sagishoval.dir/timeseries.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
