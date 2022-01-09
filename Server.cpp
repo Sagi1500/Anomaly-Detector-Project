@@ -96,7 +96,7 @@ string DioWithSocket::read() {
     return data;
 }
 
-void DioWithSocket::write(string text) {
+void DioWithSocket:: write(string text) {
     //initialize text to be a const
     const char *data = text.c_str();
     // send the data to client by the client's socket
@@ -104,6 +104,10 @@ void DioWithSocket::write(string text) {
 }
 
 void DioWithSocket::write(float f) {
+    ostringstream ss;
+    ss <<f;
+    string s(ss.str());
+    write(s);
     //need to implement this methode
 }
 

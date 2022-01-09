@@ -82,9 +82,7 @@ void clientSide1(int port,string outputFile)throw (const char*){
 
 
 void clientSide2(int port,string outputFile)throw (const char*){
-
     int serverFD = initClient(port);
-
     ofstream out(outputFile);
     ifstream in("/home/shoval/CLionProjects/sagishoval/input.txt");
     string input="";
@@ -105,6 +103,7 @@ void clientSide2(int port,string outputFile)throw (const char*){
             while(input!="done"){
                 getline(in,input);
                 writeStr(input,serverFD);
+
             }
             out<<readStr(serverFD)<<endl; // Upload complete
         }
@@ -173,7 +172,8 @@ int main(){
 
     if(mistakes>0)
         cout<<"you have "<<mistakes<<" mistakes in your output (-"<<(mistakes*2)<<")"<<endl;
-
+    else
+        printf("well done!\n");
     cout<<"done"<<endl;
     return 0;
 }

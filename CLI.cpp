@@ -47,7 +47,10 @@ void CLI::start(){
         // read the input from the client - command number.
         string input = dio->read();
         if(input=="\n"){
-            input = "3";
+            input = dio->read();
+        }
+        if (input==""){
+            input = dio->read();
         }
         num = stoi(input);
         if (num > 0 && num <= size) {
