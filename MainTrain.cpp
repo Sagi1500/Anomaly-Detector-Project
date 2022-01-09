@@ -84,7 +84,7 @@ void clientSide1(int port,string outputFile)throw (const char*){
 void clientSide2(int port,string outputFile)throw (const char*){
     int serverFD = initClient(port);
     ofstream out(outputFile);
-    ifstream in("/home/shoval/CLionProjects/sagishoval/input.txt");
+    ifstream in("/home/sagi/CLionProjects/sagishoval/input.txt");
     string input="";
     while(input!="6"){
         readMenue(out,serverFD);
@@ -148,8 +148,8 @@ size_t check(string outputFile,string expectedOutputFile){
 int main(){
     srand (time(NULL));
     int port=5000+ rand() % 1000;
-    string outputFile1="/home/shoval/CLionProjects/sagishoval/output_menu";
-    string outputFile2="/home/shoval/CLionProjects/sagishoval/output";
+    string outputFile1="/home/sagi/CLionProjects/sagishoval/output_menu";
+    string outputFile2="/home/sagi/CLionProjects/sagishoval/output";
     int x=rand() % 1000;
     outputFile1+=to_string(x);
     outputFile1+=".txt";
@@ -167,8 +167,8 @@ int main(){
     }catch(const char* s){
         cout<<s<<endl;
     }
-    size_t mistakes = check(outputFile1,"/home/shoval/CLionProjects/sagishoval/expected_output_menu.txt");
-    mistakes += check(outputFile2,"/home/shoval/CLionProjects/sagishoval/expected_output.txt");
+    size_t mistakes = check(outputFile1,"/home/sagi/CLionProjects/sagishoval/expected_output_menu.txt");
+    mistakes += check(outputFile2,"/home/sagi/CLionProjects/sagishoval/expected_output.txt");
 
     if(mistakes>0)
         cout<<"you have "<<mistakes<<" mistakes in your output (-"<<(mistakes*2)<<")"<<endl;

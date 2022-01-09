@@ -6,29 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/shoval/CLionProjects/sagishoval/AnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/AnomalyDetector.h
 string
 -
 vector
 -
 timeseries.h
-/home/shoval/CLionProjects/sagishoval/timeseries.h
+/home/sagi/CLionProjects/sagishoval/timeseries.h
 math.h
-/home/shoval/CLionProjects/sagishoval/math.h
+/home/sagi/CLionProjects/sagishoval/math.h
 
-/home/shoval/CLionProjects/sagishoval/CLI.h
+/home/sagi/CLionProjects/sagishoval/CLI.cpp
+CLI.h
+/home/sagi/CLionProjects/sagishoval/CLI.h
+
+/home/sagi/CLionProjects/sagishoval/CLI.h
 string.h
 -
 commands.h
-/home/shoval/CLionProjects/sagishoval/commands.h
+/home/sagi/CLionProjects/sagishoval/commands.h
 
-/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.h
 SimpleAnomalyDetector.h
-/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 minCircle.h
-/home/shoval/CLionProjects/sagishoval/minCircle.h
+/home/sagi/CLionProjects/sagishoval/minCircle.h
 
-/home/shoval/CLionProjects/sagishoval/MainTrain.cpp
+/home/sagi/CLionProjects/sagishoval/MainTrain.cpp
 iostream
 -
 fstream
@@ -56,9 +60,13 @@ unistd.h
 time.h
 -
 Server.h
-/home/shoval/CLionProjects/sagishoval/Server.h
+/home/sagi/CLionProjects/sagishoval/Server.h
 
-/home/shoval/CLionProjects/sagishoval/Server.h
+/home/sagi/CLionProjects/sagishoval/Server.cpp
+Server.h
+/home/sagi/CLionProjects/sagishoval/Server.h
+
+/home/sagi/CLionProjects/sagishoval/Server.h
 sys/socket.h
 -
 pthread.h
@@ -82,13 +90,13 @@ netinet/in.h
 iostream
 -
 CLI.h
-/home/shoval/CLionProjects/sagishoval/CLI.h
+/home/sagi/CLionProjects/sagishoval/CLI.h
 
-/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
 AnomalyDetector.h
-/home/shoval/CLionProjects/sagishoval/AnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/AnomalyDetector.h
 vector
 -
 algorithm
@@ -98,11 +106,11 @@ string.h
 math.h
 -
 minCircle.h
-/home/shoval/CLionProjects/sagishoval/minCircle.h
+/home/sagi/CLionProjects/sagishoval/minCircle.h
 
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
 
-/home/shoval/CLionProjects/sagishoval/commands.h
+/home/sagi/CLionProjects/sagishoval/commands.h
 iostream
 -
 string.h
@@ -112,9 +120,9 @@ fstream
 vector
 -
 HybridAnomalyDetector.h
-/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h
+/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.h
 
-/home/shoval/CLionProjects/sagishoval/minCircle.h
+/home/sagi/CLionProjects/sagishoval/minCircle.h
 iostream
 -
 vector
@@ -124,9 +132,9 @@ stdlib.h
 time.h
 -
 anomaly_detection_util.h
-/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h
 
-/home/shoval/CLionProjects/sagishoval/timeseries.h
+/home/sagi/CLionProjects/sagishoval/timeseries.h
 map
 -
 fstream

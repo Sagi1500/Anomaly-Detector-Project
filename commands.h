@@ -52,7 +52,7 @@ struct AnomalyGroup {
     int first;
     int last;
     string description;
-    bool is_false_positive;
+    bool is_true_positive;
 
     /**
      * Constructor.
@@ -61,7 +61,7 @@ struct AnomalyGroup {
         first = 0;
         last = 0;
         description = "";
-        is_false_positive = false;
+        is_true_positive = false;
     }
 };
 
@@ -282,7 +282,7 @@ public:
         for (int i = 0; i < currentState->anomaly_group.size(); i++) {
             AnomalyGroup group = currentState->anomaly_group[i];
             if (is_true_positive(start, end, group.first, group.last)) {
-                currentState->anomaly_group[i].is_false_positive = true;
+                currentState->anomaly_group[i].is_true_positive = true;
                 return true;
             }
         }
@@ -306,7 +306,7 @@ public:
      */
     void initialize_to_false_positive(CurrentState *current_state) {
         for (size_t i = 0; i < current_state->anomaly_group.size(); i++) {
-            current_state->anomaly_group[i].is_false_positive = false;
+            current_state->anomaly_group[i].is_true_positive = false;
         }
     }
 
@@ -345,13 +345,13 @@ public:
 
         // checking for false positive.
         for (AnomalyGroup v: current_state->anomaly_group) {
-            if (!v.is_false_positive) {
+            if (!v.is_true_positive) {
                 false_positive++;
             }
         }
 
         // calculate and print output.
-        float N = current_state->rows_in_test - sum;
+        float N = (current_state->rows_in_test -1 )/2 - sum ;
         false_positive = ((int) (1000.0 * false_positive / N)) / 1000.0;
         true_positive = ((int) (1000.0 * true_positive / positive)) / 1000.0;
         dio->write("True Positive Rate: ");

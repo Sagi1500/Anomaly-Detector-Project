@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/shoval/CLionProjects/sagishoval/cmake-build-debug"/>
+				<Option working_dir="/home/sagi/CLionProjects/sagishoval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/shoval/CLionProjects/sagishoval/cmake-build-debug"/>
+				<Option working_dir="/home/sagi/CLionProjects/sagishoval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/shoval/CLionProjects/sagishoval/cmake-build-debug"/>
+				<Option working_dir="/home/sagi/CLionProjects/sagishoval/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sagishoval">
-				<Option output="/home/shoval/CLionProjects/sagishoval/cmake-build-debug/sagishoval" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shoval/CLionProjects/sagishoval/cmake-build-debug"/>
+				<Option output="/home/sagi/CLionProjects/sagishoval/cmake-build-debug/sagishoval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sagi/CLionProjects/sagishoval/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 sagishoval"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 sagishoval"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sagishoval/fast">
-				<Option output="/home/shoval/CLionProjects/sagishoval/cmake-build-debug/sagishoval" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shoval/CLionProjects/sagishoval/cmake-build-debug"/>
+				<Option output="/home/sagi/CLionProjects/sagishoval/cmake-build-debug/sagishoval" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sagi/CLionProjects/sagishoval/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,65 +75,65 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 sagishoval/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/shoval/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 sagishoval/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sagi/CLionProjects/sagishoval/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
 		<Unit filename="//">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/CLI.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/CLI.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/CLI.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/CLI.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/HybridAnomalyDetector.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/MainTrain.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/MainTrain.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/Server.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/Server.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/Server.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/Server.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/SimpleAnomalyDetector.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/anomaly_detection_util.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/minCircle.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/minCircle.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/minCircle.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/minCircle.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/timeseries.cpp">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/timeseries.cpp">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/timeseries.h">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/timeseries.h">
 			<Option target="sagishoval"/>
 		</Unit>
-		<Unit filename="/home/shoval/CLionProjects/sagishoval/CMakeLists.txt">
+		<Unit filename="/home/sagi/CLionProjects/sagishoval/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
