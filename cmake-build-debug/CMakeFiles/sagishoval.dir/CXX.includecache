@@ -16,17 +16,59 @@ timeseries.h
 math.h
 /home/shoval/CLionProjects/sagishoval/math.h
 
+/home/shoval/CLionProjects/sagishoval/CLI.cpp
+CLI.h
+/home/shoval/CLionProjects/sagishoval/CLI.h
+
 /home/shoval/CLionProjects/sagishoval/CLI.h
 string.h
 -
 commands.h
 /home/shoval/CLionProjects/sagishoval/commands.h
 
+/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.cpp
+HybridAnomalyDetector.h
+/home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h
+SimpleAnomalyDetector.h
+/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
+anomaly_detection_util.h
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+
 /home/shoval/CLionProjects/sagishoval/HybridAnomalyDetector.h
 SimpleAnomalyDetector.h
 /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 minCircle.h
 /home/shoval/CLionProjects/sagishoval/minCircle.h
+
+/home/shoval/CLionProjects/sagishoval/MainTrain.cpp
+iostream
+-
+fstream
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+netdb.h
+-
+pthread.h
+-
+thread
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+time.h
+-
+Server.h
+/home/shoval/CLionProjects/sagishoval/Server.h
 
 /home/shoval/CLionProjects/sagishoval/Server.cpp
 Server.h
@@ -57,6 +99,12 @@ iostream
 -
 CLI.h
 /home/shoval/CLionProjects/sagishoval/CLI.h
+
+/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.cpp
+SimpleAnomalyDetector.h
+/home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
+anomaly_detection_util.h
+/home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
 
 /home/shoval/CLionProjects/sagishoval/SimpleAnomalyDetector.h
 anomaly_detection_util.h
@@ -99,6 +147,10 @@ time.h
 -
 anomaly_detection_util.h
 /home/shoval/CLionProjects/sagishoval/anomaly_detection_util.h
+
+/home/shoval/CLionProjects/sagishoval/timeseries.cpp
+timeseries.h
+/home/shoval/CLionProjects/sagishoval/timeseries.h
 
 /home/shoval/CLionProjects/sagishoval/timeseries.h
 map

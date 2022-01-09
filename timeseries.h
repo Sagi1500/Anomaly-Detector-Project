@@ -42,7 +42,9 @@ public:
         string key, line, value;
         int counter = 0;
         if (my_file.good()) {
-            getline(my_file, line);
+            while (line ==""){
+                getline(my_file, line);
+            }
             stringstream s(line);
             stringstream temp(line);
             while (getline(s, key, ',')) {
